@@ -1,0 +1,504 @@
+{
+  "log": {
+    "level": "info",
+    "timestamp": true
+  },
+  "experimental": {
+    "clash_api": {
+      "external_controller": "127.0.0.1:20123",
+      "external_ui": "",
+      "secret": "ID_982t2n0j",
+      "external_ui_download_url": "",
+      "default_mode": "rule"
+    },
+    "cache_file": {
+      "enabled": true,
+      "store_fakeip": true,
+      "store_rdrc": false
+    }
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 20122,
+      "sniff": true,
+      "sniff_override_destination": false,
+      "domain_strategy": "ipv4_only",
+      "tcp_fast_open": false,
+      "tcp_multi_path": false,
+      "udp_fragment": false
+    }
+  ],
+  "outbounds": [
+    {
+      "tag": "netflix",
+      "type": "selector",
+      "outbounds": [
+        "🚀 节点选择",
+        "去除2条不合适线路",
+        "新加坡直连01",
+        "新加坡直连02",
+        "新加坡直连03",
+        "新加坡 01",
+        "新加坡 02",
+        "新加坡 03",
+        "台湾01",
+        "台湾02",
+        "日本 01",
+        "日本 02",
+        "日本 03",
+        "印尼 01",
+        "印尼 02",
+        "马来西亚家宽",
+        "美国 01",
+        "美国 02",
+        "美国 03"
+      ]
+    },
+    {
+      "tag": "🚀 节点选择",
+      "type": "selector",
+      "outbounds": [
+        "🎈 自动选择",
+        "去除2条不合适线路",
+        "新加坡直连01",
+        "新加坡直连02",
+        "新加坡直连03",
+        "新加坡 01",
+        "新加坡 02",
+        "新加坡 03",
+        "台湾01",
+        "台湾02",
+        "日本 01",
+        "日本 02",
+        "日本 03",
+        "印尼 01",
+        "印尼 02",
+        "马来西亚家宽",
+        "美国 01",
+        "美国 02",
+        "美国 03"
+      ]
+    },
+    {
+      "tag": "🎈 自动选择",
+      "type": "urltest",
+      "outbounds": [
+        "去除2条不合适线路",
+        "新加坡直连01",
+        "新加坡直连02",
+        "新加坡直连03",
+        "新加坡 01",
+        "新加坡 02",
+        "新加坡 03",
+        "台湾01",
+        "台湾02",
+        "日本 01",
+        "日本 02",
+        "日本 03",
+        "印尼 01",
+        "印尼 02",
+        "马来西亚家宽",
+        "美国 01",
+        "美国 02",
+        "美国 03"
+      ],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "300s",
+      "tolerance": 150
+    },
+    {
+      "tag": "🎯 全球直连",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "block"
+      ]
+    },
+    {
+      "tag": "🛑 全球拦截",
+      "type": "selector",
+      "outbounds": [
+        "block",
+        "direct"
+      ]
+    },
+    {
+      "tag": "🐟 漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "🚀 节点选择",
+        "🎯 全球直连"
+      ]
+    },
+    {
+      "tag": "GLOBAL",
+      "type": "selector",
+      "outbounds": [
+        "direct",
+        "block",
+        "🚀 节点选择",
+        "🎈 自动选择",
+        "🎯 全球直连",
+        "🛑 全球拦截",
+        "🐟 漏网之鱼"
+      ]
+    },
+    {
+      "tag": "去除2条不合适线路",
+      "type": "trojan",
+      "server": "nginx_sg.fzg2023.top",
+      "server_port": 443,
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "v97.douyinvod.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "新加坡直连01",
+      "type": "trojan",
+      "server": "nginx_sg.fzg2023.top",
+      "server_port": 443,
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "v97.douyinvod.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "新加坡直连02",
+      "type": "trojan",
+      "server": "nginx_sgv1s2.fzg2023.top",
+      "server_port": 443,
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "v97.douyinvod.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "新加坡直连03",
+      "type": "trojan",
+      "server": "nginx_web.fzg2023.top",
+      "server_port": 443,
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "v3.douyinvod.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "新加坡 01",
+      "type": "shadowsocks",
+      "server": "t3-xf-v1-sg.douyinstatic.xyz",
+      "server_port": 17041,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "新加坡 02",
+      "type": "shadowsocks",
+      "server": "t3-xf-v1-sg.douyinstatic.xyz",
+      "server_port": 17021,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "新加坡 03",
+      "type": "shadowsocks",
+      "server": "t3-xf-v1-sg.douyinstatic.xyz",
+      "server_port": 17022,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "台湾01",
+      "type": "trojan",
+      "server": "tw1.fzg2023.top",
+      "server_port": 443,
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "v4.douyinvod.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "台湾02",
+      "type": "trojan",
+      "server": "tw1.fzg2023.top",
+      "server_port": 443,
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6",
+      "tls": {
+        "enabled": true,
+        "server_name": "v5.douyinvod.com",
+        "insecure": true,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      }
+    },
+    {
+      "tag": "日本 01",
+      "type": "shadowsocks",
+      "server": "t3-s2-jp-cdn.bilivideo.click",
+      "server_port": 17033,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "日本 02",
+      "type": "shadowsocks",
+      "server": "t3-s2-jp-cdn.bilivideo.click",
+      "server_port": 17031,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "日本 03",
+      "type": "shadowsocks",
+      "server": "t3-s2-jp-cdn.bilivideo.click",
+      "server_port": 17032,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "印尼 01",
+      "type": "shadowsocks",
+      "server": "t3-s1-idcxn--886001.douyinstatic.xyz",
+      "server_port": 17038,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "印尼 02",
+      "type": "shadowsocks",
+      "server": "t3-s1-idcxn--886001.douyinstatic.xyz",
+      "server_port": 17020,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "马来西亚家宽",
+      "type": "shadowsocks",
+      "server": "t3-s1-my-cdn-video-9s516s.douyinstatic.xyz",
+      "server_port": 17040,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "美国 01",
+      "type": "shadowsocks",
+      "server": "t3-xf-v1us.bilivideo.click",
+      "server_port": 17018,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "美国 02",
+      "type": "shadowsocks",
+      "server": "t3-xf-v1us.bilivideo.click",
+      "server_port": 17017,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "tag": "美国 03",
+      "type": "shadowsocks",
+      "server": "t3-xf-v1us.bilivideo.click",
+      "server_port": 17019,
+      "method": "aes-256-gcm",
+      "password": "c8390323-07d3-474f-a6a0-4ac6904a44d6"
+    },
+    {
+      "type": "direct",
+      "tag": "direct"
+    },
+    {
+      "type": "dns",
+      "tag": "dns-out"
+    },
+    {
+      "type": "block",
+      "tag": "block"
+    }
+  ],
+  "route": {
+    "rule_set": [
+      {
+        "tag": "netflix",
+        "type": "local",
+        "format": "binary",
+        "path": "../rulesets/geosite_netflix.srs"
+      },
+      {
+        "tag": "CATEGORY-ADS",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-ads-all.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "GEOIP-CN",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geoip/cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "GEOSITE-CN",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/cn.srs",
+        "download_detour": "🎯 全球直连"
+      },
+      {
+        "tag": "GEOLOCATION-!CN",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-!cn.srs",
+        "download_detour": "🎯 全球直连"
+      }
+    ],
+    "rules": [
+      {
+        "domain_keyword": "plex",
+        "outbound": "🚀 节点选择"
+      },
+      {
+        "rule_set": "netflix",
+        "outbound": "netflix"
+      },
+      {
+        "protocol": "dns",
+        "port": 53,
+        "outbound": "dns-out"
+      },
+      {
+        "clash_mode": "direct",
+        "outbound": "direct"
+      },
+      {
+        "clash_mode": "global",
+        "outbound": "GLOBAL"
+      },
+      {
+        "network": "udp",
+        "port": 443,
+        "outbound": "🛑 全球拦截"
+      },
+      {
+        "rule_set": "CATEGORY-ADS",
+        "outbound": "🛑 全球拦截"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "GEOIP-CN",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "GEOSITE-CN",
+        "outbound": "🎯 全球直连"
+      },
+      {
+        "rule_set": "GEOLOCATION-!CN",
+        "outbound": "🚀 节点选择"
+      }
+    ],
+    "final": "🐟 漏网之鱼",
+    "auto_detect_interface": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "tag": "remote-dns",
+        "address": "tls://8.8.8.8",
+        "address_resolver": "remote-resolver-dns",
+        "detour": "🚀 节点选择"
+      },
+      {
+        "tag": "local-dns",
+        "address": "https://223.5.5.5/dns-query",
+        "address_resolver": "resolver-dns",
+        "detour": "🎯 全球直连"
+      },
+      {
+        "tag": "resolver-dns",
+        "address": "223.5.5.5",
+        "detour": "🎯 全球直连"
+      },
+      {
+        "tag": "remote-resolver-dns",
+        "address": "8.8.8.8",
+        "detour": "🚀 节点选择"
+      },
+      {
+        "tag": "block",
+        "address": "rcode://success"
+      }
+    ],
+    "disable_cache": false,
+    "disable_expire": false,
+    "independent_cache": false,
+    "rules": [
+      {
+        "outbound": "any",
+        "disable_cache": true,
+        "server": "local-dns"
+      },
+      {
+        "clash_mode": "direct",
+        "server": "local-dns"
+      },
+      {
+        "clash_mode": "global",
+        "server": "remote-dns"
+      },
+      {
+        "rule_set": "GEOSITE-CN",
+        "server": "local-dns"
+      },
+      {
+        "rule_set": "GEOLOCATION-!CN",
+        "server": "remote-dns"
+      }
+    ],
+    "fakeip": {
+      "enabled": false,
+      "inet4_range": "198.18.0.1/16",
+      "inet6_range": "fc00::/18"
+    },
+    "final": "remote-dns",
+    "strategy": "ipv4_only"
+  }
+}
